@@ -9,6 +9,8 @@ personalizables que envían comandos o contraseñas guardadas con un clic.
 
 O entra en [Releases](https://github.com/sneakydez/NetTerm-releases/releases/latest) para ver las novedades.
 
+📖 **[Manual de instrucciones](MANUAL.md)**: cómo usar sesiones, botones, pantalla dividida, multienvío, resaltado, importar/exportar y más. También está dentro de la app (botón `?` o `F1`).
+
 ## Instalar
 
 1. Descarga `NetTerm.exe` y guárdalo donde quieras (por ejemplo en tu Escritorio o en `Documentos\NetTerm`).
