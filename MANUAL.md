@@ -60,7 +60,9 @@ Si una sesión se cae, pulsa `Enter` en su pestaña, o clic derecho en la pesta�
 ## 5. Trabajar en la terminal
 
 - **Copiar:** sombrea el texto con el ratón; se copia solo. También `Ctrl+Shift+C`.
-- **Pegar:** clic derecho, o `Ctrl+Shift+V`.
+- **Pegar:** clic derecho, `Ctrl+Shift+V` o `Ctrl+V`. Si el texto tiene **varias líneas**, NetTerm te muestra
+  antes la configuración completa, con números de línea, y te pregunta si quieres pegarla (como MobaXterm): cada
+  línea se ejecuta como un comando. Se ajusta en Preferencias → Terminal → «Preguntar antes de pegar».
 - **Menú contextual:** `Ctrl` + clic derecho (o configúralo para que el clic derecho abra siempre el menú, ver
   Preferencias → Terminal). Opciones: Copiar, Pegar, **Resaltar** la palabra, Seleccionar todo, Limpiar pantalla.
 - `Ctrl+C`, `Ctrl+Z`, `Tab`, flechas… funcionan como en cualquier terminal.
@@ -87,12 +89,27 @@ Pulsa **＋ Botón** en la barra de botones.
   `terminal length 0` + `show running-config`).
 - **Contraseña:** envía una contraseña guardada (por ejemplo la de `enable`) sin que se vea nunca en pantalla.
 - **Pulsar Enter al final:** márcalo para que se ejecute directamente.
-- **Atajo de teclado:** haz clic en el campo «Atajo» y pulsa la combinación (`Ctrl+Alt+1`, `F5`…).
-  `Ctrl`+letra no se permite porque la terminal la necesita (`Ctrl+C`, `Ctrl+D`…). `Supr` quita el atajo.
+- **Atajo de teclado:** haz clic en el campo «Atajo» y pulsa la combinación (`Ctrl+Alt+1`, `F5`, `Ctrl+→`…).
+  `Ctrl`+letra no se permite porque la terminal la necesita (`Ctrl+C`, `Ctrl+D`…). Las flechas, Inicio, Fin,
+  RePág, AvPág e Insert necesitan `Ctrl` o `Alt`. `Supr` quita el atajo.
 - **Color:** para distinguirlos de un vistazo.
 
 Clic derecho sobre un botón para **editarlo, moverlo o borrarlo**. El botón se aplica a la pestaña activa
 (o a todas las marcadas si el multienvío está activo).
+
+### Editor de teclas
+
+Para asignar textos a teclas sin crear botones (como el «Keymap Editor» de SecureCRT):
+**Preferencias → Teclas**.
+
+1. Elige los modificadores (`Ctrl`, `Alt`, `Mayús`) y haz clic en una tecla del teclado en pantalla. También
+   puedes hacer clic en el teclado y pulsar la combinación real.
+2. Escribe el texto que debe enviar, por ejemplo `show interfaces diagnostics optics et-0/0/0`. Puede tener
+   varias líneas.
+3. Marca «Pulsar Enter al final» si quieres que se ejecute directamente, y pulsa **Asignar**.
+
+Colores del teclado: azul = asignada; verde = atajo de un botón; raya azul = asignada con otros modificadores;
+atenuada = la usa NetTerm. Abajo tienes la lista de teclas asignadas para editarlas o quitarlas.
 
 ## 7. Pantalla dividida
 
@@ -157,6 +174,7 @@ Los cambios se guardan solos.
   derecha u oculto; lista, compacta o tarjetas.
 - **Logs:** activar o desactivar y elegir la carpeta.
 - **Resaltado:** ver el apartado 9.
+- **Teclas:** editor de teclas (apartado 6).
 - **Actualizaciones:** buscar actualizaciones al abrir y «Buscar actualizaciones ahora».
 
 ### Historial en pantalla
@@ -215,7 +233,7 @@ Nunca se instala nada sin que lo aceptes.
 | `Ctrl+Shift+1` … `4` | Pantalla dividida |
 | `Ctrl+Shift+M` | Multienvío |
 | `Ctrl+Shift+C` / `Ctrl+Shift+V` | Copiar / pegar |
-| Los que tú asignes | Tus botones |
+| Los que tú asignes | Tus botones y el editor de teclas |
 
 ## 15. Tus datos y la seguridad
 
@@ -237,3 +255,4 @@ Nunca se instala nada sin que lo aceptes.
 | No veo el panel de sesiones | Pulsa `☰` o `Ctrl+B` |
 | Las palabras no se colorean | Preferencias → Resaltado: comprueba que está activado. Solo afecta a lo que llega después |
 | Un botón no hace nada | La sesión debe estar conectada (punto verde). Las contraseñas solo se envían a SSH/Telnet |
+| El equipo recorta los comandos con `...` o descoloca las líneas | Desde la versión 1.4 NetTerm le comunica al equipo el ancho real de la ventana (SSH y Telnet). Si pasa con una versión anterior, actualiza |
