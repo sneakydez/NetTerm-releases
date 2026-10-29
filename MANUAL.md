@@ -28,7 +28,7 @@ Para conectar más tarde: **doble clic** sobre la sesión en el panel de la izqu
 |---|---|
 | Panel de sesiones (izquierda) | Tus sesiones guardadas, agrupadas y con buscador |
 | `☰` (arriba a la izquierda) | Mostrar u ocultar el panel de sesiones (`Ctrl+B`) |
-| Pestañas | Una por conexión. El punto indica el estado: verde conectado, amarillo conectando, rojo desconectado |
+| Pestañas | Una por conexión. El punto indica el estado: verde conectado, amarillo conectando, rojo desconectado. **Arrástralas** para cambiar el orden (`Ctrl+Tab` sigue ese orden) |
 | `📡` | Multienvío: escribir en varias sesiones a la vez |
 | `▥` | Pantalla dividida: ver 1, 2 o 4 terminales |
 | `⚙` | Preferencias (`Ctrl+,`) |
@@ -168,8 +168,9 @@ Los routers y switches no envían colores, así que NetTerm los añade. Por defe
 Los cambios se guardan solos.
 
 - **Terminal:** 13 temas, tipo y tamaño de letra, interlineado, grosor, cursor, colores propios,
-  historial en pantalla y comportamiento del clic derecho. Si la sesión abierta tiene tema propio, eliges si el
-  tema se aplica a «Todas las sesiones» o «Solo esta».
+  historial en pantalla, comportamiento del clic derecho, aviso al pegar y **preguntar antes de cerrar NetTerm**
+  (por defecto, si hay sesiones abiertas; para que no se cierre por accidente). Si la sesión abierta tiene tema
+  propio, eliges si el tema se aplica a «Todas las sesiones» o «Solo esta».
 - **Diseño:** botones arriba, abajo, izquierda o derecha; estilo y tamaño; panel de sesiones a la izquierda,
   derecha u oculto; lista, compacta o tarjetas.
 - **Logs:** activar o desactivar y elegir la carpeta.
