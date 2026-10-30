@@ -29,6 +29,7 @@ Para conectar más tarde: **doble clic** sobre la sesión en el panel de la izqu
 | Panel de sesiones (izquierda) | Tus sesiones guardadas, agrupadas y con buscador |
 | `☰` (arriba a la izquierda) | Mostrar u ocultar el panel de sesiones (`Ctrl+B`) |
 | Pestañas | Una por conexión. El punto indica el estado: verde conectado, amarillo conectando, rojo desconectado. **Arrástralas** para cambiar el orden (`Ctrl+Tab` sigue ese orden) |
+| `🔍` | Buscar y filtrar en la terminal (`Ctrl+Shift+F`) |
 | `📡` | Multienvío: escribir en varias sesiones a la vez |
 | `▥` | Pantalla dividida: ver 1, 2 o 4 terminales |
 | `⚙` | Preferencias (`Ctrl+,`) |
@@ -67,6 +68,23 @@ Si una sesión se cae, pulsa `Enter` en su pestaña, o clic derecho en la pesta�
   Preferencias → Terminal). Opciones: Copiar, Pegar, **Resaltar** la palabra, Seleccionar todo, Limpiar pantalla.
 - `Ctrl+C`, `Ctrl+Z`, `Tab`, flechas… funcionan como en cualquier terminal.
 - Clic derecho en una **pestaña**: Reconectar, Abrir log, Limpiar pantalla, Cerrar.
+
+### Buscar y filtrar en la terminal
+
+Pulsa `🔍` o `Ctrl+Shift+F` (si tienes texto sombreado, lo busca directamente).
+
+- **Buscar:** escribe la palabra. Todas las coincidencias se marcan en amarillo y la actual en naranja; el
+  contador indica «3 de 27». `Enter` va a la siguiente, `Mayús+Enter` a la anterior, `Esc` cierra.
+- **Opciones:** `Aa` distingue mayúsculas, `ab` solo palabras completas y `.*` usa una expresión regular
+  (por ejemplo `et-0/0/[0-3] +up +down` para ver las interfaces caídas).
+- **Filtrar líneas:** muestra **solo las líneas que contienen la palabra**, como un `| include`, pero sobre lo que
+  ya tienes en pantalla, sin volver a lanzar el comando. Ideal para revisar una configuración larga.
+  - **Con la palabra / Sin la palabra:** incluir o excluir (como `| exclude`).
+  - **Contexto:** muestra además 1, 3 o 5 líneas alrededor de cada coincidencia (en gris).
+  - Haz clic en una línea para ir a ella en la terminal. **Copiar** copia el resultado; **Actualizar** vuelve a
+    leer la terminal si ha llegado salida nueva.
+
+`Ctrl+F` sin `Mayús` no se usa para buscar porque la CLI de los equipos lo usa para mover el cursor.
 
 ### SFTP y FTP
 
@@ -148,7 +166,10 @@ Los routers y switches no envían colores, así que NetTerm los añade. Por defe
 | `administratively down`, `admin-down`, `%Warning`… | Naranja |
 | Direcciones IPv4 e IPv6 | Cian |
 | Direcciones MAC (`0050.56c0.0001`, `aa:bb:cc:dd:ee:ff`) | Morado |
-| Interfaces (`Gi0/1`, `BE3.9`, `et-0/0/0`, `ae3`…) | Azul |
+| Interfaces agregadas / trunk (`ae3`, `BE3.9`, `Port-channel10`, `Eth-Trunk0`…) | Dorado negrita |
+| Interfaces de 100G y 400G (`et-0/0/0`, `Hu0/0/0/1`, `HundredGigE…`, `100GE…`) | Rosa |
+| Interfaces de 10G (`xe-0/1/4`, `TenGigE…`, `Te1/1/1`, `XGigabitEthernet…`) | Turquesa |
+| El resto de interfaces (`ge-0/0/1`, `Gi0/1`, `lo0`…) | Azul |
 
 **Resaltar una palabra al momento:** clic derecho sobre la palabra en la terminal (o `Ctrl`+clic derecho) →
 **🎨 Resaltar**. Elige una plantilla o crea una nueva. Se aplica a lo que llegue a partir de ese momento.
@@ -157,8 +178,10 @@ Los routers y switches no envían colores, así que NetTerm los añade. Por defe
 
 - **Plantillas de estilo:** color del texto, fondo (∅ = sin fondo), **B** negrita, *I* cursiva, U subrayado.
 - **Reglas:** a qué se aplica cada plantilla.
-  - *Palabras:* lista separada por comas (`up, active, connected`).
-  - *Patrón:* IPv4, IPv6, MAC o interfaces.
+  - *Palabras:* palabras exactas separadas por comas (`up, active, connected`). `UP` no colorea `BACKUP`.
+  - *Contiene:* como Palabras, pero también dentro de otras palabras: `MPLS` colorea `MPLS_VPN_SLAES`.
+  - *Patrón:* IPv4, IPv6, MAC o un **tipo de interfaz**: trunks/agregadas, 100G-400G, 40G-25G, 10G, 1G,
+    gestión/lógicas, o cualquier interfaz. Así puedes poner cada tipo del color que quieras.
   - *Regex:* expresión regular (por ejemplo `VLAN\d+`). Si está mal escrita, el campo se pone en rojo.
   - `Aa` = ignorar mayúsculas. `▲▼` = prioridad: si dos reglas coinciden, gana la de arriba.
 - **Restaurar** vuelve a las reglas predeterminadas.
@@ -231,6 +254,7 @@ Nunca se instala nada sin que lo aceptes.
 | `Ctrl+B` | Mostrar u ocultar el panel de sesiones |
 | `Ctrl+,` | Preferencias |
 | `F1` | Este manual |
+| `Ctrl+Shift+F` | Buscar y filtrar en la terminal |
 | `Ctrl+Shift+1` … `4` | Pantalla dividida |
 | `Ctrl+Shift+M` | Multienvío |
 | `Ctrl+Shift+C` / `Ctrl+Shift+V` | Copiar / pegar |
