@@ -188,7 +188,7 @@ Los routers y switches no envían colores, así que NetTerm los añade. Por defe
 
 ## 10. Preferencias (`⚙` o `Ctrl+,`)
 
-Los cambios se guardan solos.
+Los cambios se guardan solos. El **🌐 idioma** (Español, English, Română) se elige arriba en esta ventana.
 
 - **Terminal:** 13 temas, tipo y tamaño de letra, interlineado, grosor, cursor, colores propios,
   historial en pantalla, comportamiento del clic derecho, aviso al pegar y **preguntar antes de cerrar NetTerm**
