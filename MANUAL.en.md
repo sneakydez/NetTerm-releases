@@ -197,7 +197,7 @@ Routers and switches don't send colors, so NetTerm adds them. By default:
 
 ## 10. Preferences (`⚙` or `Ctrl+,`)
 
-Changes are saved automatically. The **🌐 language** (Español, English, Română) is chosen at the top of this window.
+Changes are saved automatically. The **🌐 language** (Español, English) is chosen at the top of this window.
 
 - **Terminal:** 13 themes, font and size, line height, weight, cursor, custom colors,
   on-screen history, right-click behavior, paste warning, keepalive, automatic reconnection and **ask before closing NetTerm**

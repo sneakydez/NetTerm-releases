@@ -9,9 +9,9 @@ personalizables que envían comandos o contraseñas guardadas con un clic.
 
 O entra en [Releases](https://github.com/sneakydez/NetTerm-releases/releases/latest) para ver las novedades.
 
-📖 **[Manual de instrucciones](MANUAL.md)** ([English](MANUAL.en.md) · [Română](MANUAL.ro.md)): cómo usar sesiones, botones, pantalla dividida, multienvío, resaltado, importar/exportar y más. También está dentro de la app (botón `?` o `F1`).
+📖 **[Manual de instrucciones](MANUAL.md)** ([English](MANUAL.en.md)): cómo usar sesiones, botones, pantalla dividida, multienvío, resaltado, importar/exportar y más. También está dentro de la app (botón `?` o `F1`).
 
-🌐 **Idiomas:** español, inglés y rumano (Preferencias → 🌐).
+🌐 **Idiomas:** español e inglés (Preferencias → 🌐).
 
 ## Instalar
 
