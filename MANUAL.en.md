@@ -56,7 +56,16 @@ If it works, a notice offers to **save it** in the session. `Esc` cancels.
 
 ### Reconnect
 
-If a session drops, press `Enter` in its tab, or right-click the tab → **Reconnect**.
+If you close a session or the device closes it (`exit`, idle timeout), press `Enter` in its tab, or right-click the
+tab → **Reconnect**.
+
+If the connection **drops** (device reboot, network or VPN outage), an SSH or Telnet session **reconnects by itself**:
+it makes attempts further and further apart (up to one every 30 s) for 15 minutes. `Enter` tries right away and `Esc`
+cancels. If the password fails, it stops trying and asks you for it, so your user doesn't get locked out. No command is
+repeated and the log continues in the same file. Set the minutes, or turn it off, in Preferences → Terminal.
+
+The **keepalive** (every 60 s, also in Preferences → Terminal) stops a firewall from cutting an idle session and helps
+notice a drop sooner. It doesn't prevent an idle timeout configured on the device itself.
 
 ## 5. Working in the terminal
 
@@ -166,10 +175,10 @@ Routers and switches don't send colors, so NetTerm adds them. By default:
 | `administratively down`, `admin-down`, `%Warning`… | Orange |
 | IPv4 and IPv6 addresses | Cyan |
 | MAC addresses (`0050.56c0.0001`, `aa:bb:cc:dd:ee:ff`) | Purple |
-| Aggregated / trunk interfaces (`ae3`, `BE3.9`, `Port-channel10`, `Eth-Trunk0`…) | Bold gold |
-| 100G and 400G interfaces (`et-0/0/0`, `Hu0/0/0/1`, `HundredGigE…`, `100GE…`) | Pink |
-| 10G interfaces (`xe-0/1/4`, `TenGigE…`, `Te1/1/1`, `XGigabitEthernet…`) | Turquoise |
-| Other interfaces (`ge-0/0/1`, `Gi0/1`, `lo0`…) | Blue |
+| Aggregated / trunk interfaces (`ae3`, `BE3.9`, `Port-channel10`, `Eth-Trunk0`, `BAGG1`, `lag1`, `Trk1`…) | Bold gold |
+| 100G and 400G interfaces (`et-0/0/0`, `Hu0/0/0/1`, `HundredGigE…`, `100GE…`, `HGE1/0/49`) | Pink |
+| 10G interfaces (`xe-0/1/4`, `TenGigE…`, `Te1/1/1`, `XGigabitEthernet…`, `XGE1/0/1`) | Turquoise |
+| Other interfaces (`ge-0/0/1`, `Gi0/1`, `lo0`, `GE1/0/1`, `1/1/1`…) | Blue |
 
 **Highlight a word on the spot:** right-click the word in the terminal (or `Ctrl`+right-click) →
 **🎨 Highlight**. Choose a template or create a new one. It applies to whatever arrives from that moment on.
@@ -191,7 +200,7 @@ Routers and switches don't send colors, so NetTerm adds them. By default:
 Changes are saved automatically. The **🌐 language** (Español, English, Română) is chosen at the top of this window.
 
 - **Terminal:** 13 themes, font and size, line height, weight, cursor, custom colors,
-  on-screen history, right-click behavior, paste warning and **ask before closing NetTerm**
+  on-screen history, right-click behavior, paste warning, keepalive, automatic reconnection and **ask before closing NetTerm**
   (by default, if there are open sessions; so it doesn't close by accident). If the open session has its own
   theme, you choose whether the theme applies to "All sessions" or "This session only".
 - **Layout:** buttons top, bottom, left or right; style and size; sessions panel left,

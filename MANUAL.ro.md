@@ -56,7 +56,17 @@ Dacă funcționează, apare un mesaj care îți oferă să o **salvezi** în ses
 
 ### Reconectare
 
-Dacă o sesiune cade, apasă `Enter` în fila ei sau clic dreapta pe filă → **Reconectează**.
+Dacă închizi o sesiune sau o închide echipamentul (`exit`, timp de inactivitate), apasă `Enter` în fila ei sau clic
+dreapta pe filă → **Reconectează**.
+
+Dacă conexiunea **se pierde** (repornirea echipamentului, întreruperea rețelei sau a VPN-ului), o sesiune SSH sau Telnet
+**se reconectează singură**: face încercări din ce în ce mai rare (până la una la 30 s) timp de 15 minute. `Enter`
+încearcă imediat, iar `Esc` anulează. Dacă parola eșuează, nu mai încearcă și ți-o cere, ca să nu îți fie blocat
+utilizatorul. Nicio comandă nu se repetă, iar jurnalul continuă în același fișier. Minutele sau dezactivarea se aleg în
+Preferințe → Terminal.
+
+**Keepalive** (la 60 s, tot în Preferințe → Terminal) împiedică un firewall să taie o sesiune inactivă și ajută la
+observarea mai rapidă a unei căderi. Nu împiedică închiderea pentru inactivitate configurată pe echipament.
 
 ## 5. Lucrul în terminal
 
@@ -166,10 +176,10 @@ Routerele și switch-urile nu trimit culori, așa că NetTerm le adaugă. Implic
 | `administratively down`, `admin-down`, `%Warning`… | Portocaliu |
 | Adrese IPv4 și IPv6 | Cyan |
 | Adrese MAC (`0050.56c0.0001`, `aa:bb:cc:dd:ee:ff`) | Mov |
-| Interfețe agregate / trunk (`ae3`, `BE3.9`, `Port-channel10`, `Eth-Trunk0`…) | Auriu aldin |
-| Interfețe de 100G și 400G (`et-0/0/0`, `Hu0/0/0/1`, `HundredGigE…`, `100GE…`) | Roz |
-| Interfețe de 10G (`xe-0/1/4`, `TenGigE…`, `Te1/1/1`, `XGigabitEthernet…`) | Turcoaz |
-| Restul interfețelor (`ge-0/0/1`, `Gi0/1`, `lo0`…) | Albastru |
+| Interfețe agregate / trunk (`ae3`, `BE3.9`, `Port-channel10`, `Eth-Trunk0`, `BAGG1`, `lag1`, `Trk1`…) | Auriu aldin |
+| Interfețe de 100G și 400G (`et-0/0/0`, `Hu0/0/0/1`, `HundredGigE…`, `100GE…`, `HGE1/0/49`) | Roz |
+| Interfețe de 10G (`xe-0/1/4`, `TenGigE…`, `Te1/1/1`, `XGigabitEthernet…`, `XGE1/0/1`) | Turcoaz |
+| Restul interfețelor (`ge-0/0/1`, `Gi0/1`, `lo0`, `GE1/0/1`, `1/1/1`…) | Albastru |
 
 **Evidențiază un cuvânt pe loc:** clic dreapta pe cuvânt în terminal (sau `Ctrl`+clic dreapta) →
 **🎨 Evidențiază**. Alege un șablon sau creează unul nou. Se aplică la ceea ce sosește din acel moment.
@@ -191,7 +201,7 @@ Routerele și switch-urile nu trimit culori, așa că NetTerm le adaugă. Implic
 Modificările se salvează singure. **🌐 Limba** (Español, English, Română) se alege în partea de sus a acestei ferestre.
 
 - **Terminal:** 13 teme, font și dimensiune, spațiere, grosime, cursor, culori proprii,
-  istoric pe ecran, comportamentul clicului dreapta, avertisment la lipire și **întreabă înainte de a închide NetTerm**
+  istoric pe ecran, comportamentul clicului dreapta, avertisment la lipire, keepalive, reconectare automată și **întreabă înainte de a închide NetTerm**
   (implicit, dacă există sesiuni deschise; ca să nu se închidă din greșeală). Dacă sesiunea deschisă are temă
   proprie, alegi dacă tema se aplică la „Toate sesiunile" sau „Doar această sesiune".
 - **Aspect:** butoane sus, jos, stânga sau dreapta; stil și dimensiune; panoul de sesiuni în stânga,

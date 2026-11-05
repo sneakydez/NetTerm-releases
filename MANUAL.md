@@ -56,7 +56,16 @@ Si funciona, aparece un aviso para **guardarla** en la sesión. `Esc` cancela.
 
 ### Reconectar
 
-Si una sesión se cae, pulsa `Enter` en su pestaña, o clic derecho en la pestaña → **Reconectar**.
+Si cierras una sesión o la cierra el equipo (`exit`, tiempo de inactividad), pulsa `Enter` en su pestaña, o clic
+derecho en la pestaña → **Reconectar**.
+
+Si la conexión **se cae** (reinicio del equipo, corte de red o VPN), una sesión SSH o Telnet **reconecta sola**: hace
+intentos cada vez más espaciados (hasta uno cada 30 s) durante 15 minutos. `Enter` intenta ya y `Esc` cancela.
+Si la contraseña falla, deja de intentarlo y te la pide, para no bloquear tu usuario. No se repite ningún comando y el
+log sigue en el mismo archivo. Los minutos, o desactivarlo, en Preferencias → Terminal.
+
+El **keepalive** (cada 60 s, también en Preferencias → Terminal) evita que un cortafuegos corte una sesión parada y
+ayuda a notar antes una caída. No evita el cierre por inactividad que tenga configurado el propio equipo.
 
 ## 5. Trabajar en la terminal
 
@@ -166,10 +175,10 @@ Los routers y switches no envían colores, así que NetTerm los añade. Por defe
 | `administratively down`, `admin-down`, `%Warning`… | Naranja |
 | Direcciones IPv4 e IPv6 | Cian |
 | Direcciones MAC (`0050.56c0.0001`, `aa:bb:cc:dd:ee:ff`) | Morado |
-| Interfaces agregadas / trunk (`ae3`, `BE3.9`, `Port-channel10`, `Eth-Trunk0`…) | Dorado negrita |
-| Interfaces de 100G y 400G (`et-0/0/0`, `Hu0/0/0/1`, `HundredGigE…`, `100GE…`) | Rosa |
-| Interfaces de 10G (`xe-0/1/4`, `TenGigE…`, `Te1/1/1`, `XGigabitEthernet…`) | Turquesa |
-| El resto de interfaces (`ge-0/0/1`, `Gi0/1`, `lo0`…) | Azul |
+| Interfaces agregadas / trunk (`ae3`, `BE3.9`, `Port-channel10`, `Eth-Trunk0`, `BAGG1`, `lag1`, `Trk1`…) | Dorado negrita |
+| Interfaces de 100G y 400G (`et-0/0/0`, `Hu0/0/0/1`, `HundredGigE…`, `100GE…`, `HGE1/0/49`) | Rosa |
+| Interfaces de 10G (`xe-0/1/4`, `TenGigE…`, `Te1/1/1`, `XGigabitEthernet…`, `XGE1/0/1`) | Turquesa |
+| El resto de interfaces (`ge-0/0/1`, `Gi0/1`, `lo0`, `GE1/0/1`, `1/1/1`…) | Azul |
 
 **Resaltar una palabra al momento:** clic derecho sobre la palabra en la terminal (o `Ctrl`+clic derecho) →
 **🎨 Resaltar**. Elige una plantilla o crea una nueva. Se aplica a lo que llegue a partir de ese momento.
@@ -191,7 +200,7 @@ Los routers y switches no envían colores, así que NetTerm los añade. Por defe
 Los cambios se guardan solos. El **🌐 idioma** (Español, English, Română) se elige arriba en esta ventana.
 
 - **Terminal:** 13 temas, tipo y tamaño de letra, interlineado, grosor, cursor, colores propios,
-  historial en pantalla, comportamiento del clic derecho, aviso al pegar y **preguntar antes de cerrar NetTerm**
+  historial en pantalla, comportamiento del clic derecho, aviso al pegar, keepalive, reconexión automática y **preguntar antes de cerrar NetTerm**
   (por defecto, si hay sesiones abiertas; para que no se cierre por accidente). Si la sesión abierta tiene tema
   propio, eliges si el tema se aplica a «Todas las sesiones» o «Solo esta».
 - **Diseño:** botones arriba, abajo, izquierda o derecha; estilo y tamaño; panel de sesiones a la izquierda,
