@@ -135,6 +135,10 @@ To assign texts to keys without creating buttons (like SecureCRT's "Keymap Edito
    several lines.
 3. Check "Press Enter at the end" if you want it to run directly, and click **Assign**.
 
+The on-screen keyboard is complete, with the navigation block and numeric keypad. `Del`, `Enter` and the symbol keys also
+work, with `Ctrl` or `Alt`. Click `Ctrl`, `Alt` or `Shift` to turn them on. Dimmed keys (`Esc`, `Win`, `Caps Lock`…) can't be
+assigned, and neither can shortcuts Windows takes for itself (`Alt+Tab`, `Alt+F4`…).
+
 Keyboard colors: blue = assigned; green = a button's shortcut; blue stripe = assigned with other modifiers;
 dimmed = used by NetTerm. Below is the list of assigned keys to edit or remove them.
 

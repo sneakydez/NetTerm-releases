@@ -135,6 +135,10 @@ Para asignar textos a teclas sin crear botones (como el «Keymap Editor» de Sec
    varias líneas.
 3. Marca «Pulsar Enter al final» si quieres que se ejecute directamente, y pulsa **Asignar**.
 
+El teclado en pantalla es completo, con bloque de navegación y teclado numérico. También sirven `Ñ`, `Supr`, `Intro` o los
+símbolos, con `Ctrl` o `Alt`. Clic en `Ctrl`, `Alt` o `Mayús` para activarlas. Las atenuadas (`Esc`, `Win`, `Bloq Mayús`…) no
+se pueden asignar. Los atajos que recoge Windows (`Alt+Tab`, `Alt+F4`…) tampoco.
+
 Colores del teclado: azul = asignada; verde = atajo de un botón; raya azul = asignada con otros modificadores;
 atenuada = la usa NetTerm. Abajo tienes la lista de teclas asignadas para editarlas o quitarlas.
 
