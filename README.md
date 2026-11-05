@@ -19,7 +19,7 @@ O entra en [Releases](https://github.com/sneakydez/NetTerm-releases/releases/lat
    No necesita instalación.
 2. Ábrelo con doble clic.
 3. Si Windows muestra «Windows protegió su PC», pulsa **Más información → Ejecutar de todas formas**.
-   Aparece porque el programa aún no está firmado digitalmente; no es un virus.
+   Aparece porque el programa aún no está firmado digitalmente.
 
 ## Actualizaciones
 

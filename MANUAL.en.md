@@ -9,7 +9,7 @@ Raspberry Pi over **SSH, Telnet, SFTP and FTP**, with buttons that send commands
 2. Save it wherever you like (Desktop, `Documents\NetTerm`…). **No installation needed.**
 3. Open it with a double-click.
 4. If Windows shows **"Windows protected your PC"**, click **More info → Run anyway**.
-   It appears because the program is not digitally signed yet; it is not a virus.
+   It appears because the program is not digitally signed yet.
 
 The first time it takes a few seconds to open while Windows scans it.
 

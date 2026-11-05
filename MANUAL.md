@@ -9,7 +9,7 @@ Raspberry Pi por **SSH, Telnet, SFTP y FTP**, con botones que envían comandos o
 2. Guárdalo donde quieras (Escritorio, `Documentos\NetTerm`…). **No necesita instalación.**
 3. Ábrelo con doble clic.
 4. Si Windows muestra **«Windows protegió su PC»**, pulsa **Más información → Ejecutar de todas formas**.
-   Aparece porque el programa aún no está firmado digitalmente; no es un virus.
+   Aparece porque el programa aún no está firmado digitalmente.
 
 La primera vez tarda unos segundos en abrir mientras Windows lo analiza.
 
