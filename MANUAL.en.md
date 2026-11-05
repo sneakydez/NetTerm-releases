@@ -97,7 +97,18 @@ Click `🔍` or press `Ctrl+Shift+F` (if you have selected text, it searches for
 
 ### SFTP and FTP
 
-SFTP/FTP sessions open a file console. Type `help` to see the commands:
+SFTP/FTP sessions open a **file explorer**: your PC on the left and the device on the right, with the console below.
+
+- **Navigate:** double-click a folder, `↑` to go up, or type the path and press `Enter`.
+- **Select:** click, `Ctrl`+click, `Shift`+click or `Ctrl+A`.
+- **Copy:** drag from one panel to the other, use the `→` and `←` buttons or double-click a file. Folders are copied with their
+  contents. If something already exists at the destination, NetTerm asks before overwriting. Progress shows at the bottom, with **Cancel**.
+- **Other actions (right-click):** new folder, rename, delete, copy path. Also `F2`, `Del`, `F5` and `Backspace`.
+  Delete and rename only work on the remote device; nothing on your PC is deleted from here.
+- `✕` hides the explorer and `📁` shows it again.
+- For safety, downloads skip links and names that aren't valid on Windows, and NetTerm tells you how many.
+
+If you prefer typing, the console is still there. Type `help` to see the commands:
 
 | Command | What it does |
 |---|---|

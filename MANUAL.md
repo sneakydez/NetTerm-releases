@@ -97,7 +97,18 @@ Pulsa `🔍` o `Ctrl+Shift+F` (si tienes texto sombreado, lo busca directamente)
 
 ### SFTP y FTP
 
-Las sesiones SFTP/FTP abren una consola de archivos. Escribe `help` para ver los comandos:
+Las sesiones SFTP/FTP abren un **explorador de archivos**: tu PC a la izquierda y el equipo a la derecha, con la consola debajo.
+
+- **Navegar:** doble clic en una carpeta, `↑` para subir, o escribe la ruta y pulsa `Enter`.
+- **Seleccionar:** clic, `Ctrl`+clic, `Mayús`+clic o `Ctrl+A`.
+- **Copiar:** arrastra de un panel al otro, usa los botones `→` y `←` o haz doble clic en un archivo. Las carpetas se copian
+  con su contenido. Si algo ya existe en el destino, NetTerm pregunta antes de sobrescribir. Abajo se ve el progreso, con **Cancelar**.
+- **Otras acciones (clic derecho):** nueva carpeta, renombrar, borrar, copiar ruta. También `F2`, `Supr`, `F5` y `Retroceso`.
+  Borrar y renombrar solo actúan en el equipo remoto; en tu PC no se borra nada desde aquí.
+- `✕` oculta el explorador y `📁` lo vuelve a mostrar.
+- Por seguridad, al descargar se omiten los enlaces y los nombres no válidos en Windows, y NetTerm avisa de cuántos.
+
+Si prefieres escribir, la consola sigue disponible. Escribe `help` para ver los comandos:
 
 | Comando | Qué hace |
 |---|---|
