@@ -244,7 +244,7 @@ Verás una lista para elegir cuáles importar. Las que ya tienes aparecen como �
 ### Compartir tu configuración con el equipo
 
 - **Exportar configuración:** crea un archivo `.netterm` con sesiones, botones y/o preferencias.
-  Las contraseñas **no se incluyen**, o van **cifradas con una contraseña** que tú eliges.
+  Las contraseñas y el editor de teclas **no se incluyen**, o van **cifrados con una contraseña** que tú eliges.
 - **Importar configuración:** abre un `.netterm`. Si trae contraseñas cifradas, escribe la contraseña del archivo.
   Lo que ya tienes no se duplica. Las preferencias importadas reemplazan las tuyas (solo si lo marcas).
 
@@ -277,7 +277,13 @@ Nunca se instala nada sin que lo aceptes.
 
 - Sesiones, contraseñas y botones se guardan **cifrados** en `%USERPROFILE%\.netterm`, protegidos con tu
   usuario de Windows: otra cuenta u otro PC no puede leerlos.
-- Las preferencias están en `%USERPROFILE%\.netterm\settings.json`.
+- Las preferencias están en `%USERPROFILE%\.netterm\settings.json`. Los textos del editor de teclas van cifrados.
+- **SSH y SFTP comprueban el equipo:** la primera vez se guarda su clave (`known_hosts`, en la misma carpeta). Si después
+  cambia, NetTerm corta **sin enviar la contraseña** y muestra las dos huellas. Si sabes por qué ha cambiado (equipo
+  sustituido o reinstalado), escribe `aceptar` y pulsa `Enter`. Si no lo sabes, avisa antes de aceptar.
+- **Telnet y FTP no van cifrados:** la contraseña y lo que escribes viajan en claro. Usa SSH o SFTP siempre que puedas.
+- **Los logs no van cifrados.** Guárdalos en una carpeta segura.
+- **Importa `.netterm` solo de quien te fíes:** sus botones y teclas envían comandos a tus equipos.
 - NetTerm no envía tus datos a ningún servidor. Solo se conecta a tus equipos y, para buscar actualizaciones,
   a GitHub.
 
@@ -288,6 +294,7 @@ Nunca se instala nada sin que lo aceptes.
 | «Windows protegió su PC» | Más información → Ejecutar de todas formas |
 | «Usuario o contraseña incorrectos» | Escribe la contraseña en la terminal y guárdala si funciona. Revisa el teclado al crear la contraseña en el equipo (`@` frente a `2`) |
 | «El servidor cortó la conexión» | Bloqueo temporal por intentos fallidos: espera unos minutos |
+| «La clave SSH ha cambiado» | No se ha enviado la contraseña. Si el equipo se ha sustituido o reinstalado, escribe `aceptar` y pulsa `Enter`. Si no, no aceptes y avisa |
 | «Conexión rechazada» | El puerto no está abierto o el servicio (SSH/Telnet) no está activo en el equipo |
 | «Tiempo de espera agotado» | El equipo no responde: revisa la IP, la VPN o el cortafuegos |
 | No veo el panel de sesiones | Pulsa `☰` o `Ctrl+B` |

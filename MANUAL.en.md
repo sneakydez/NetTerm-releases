@@ -244,7 +244,7 @@ You will see a list to choose which ones to import. Those you already have appea
 ### Share your configuration with the team
 
 - **Export configuration:** creates a `.netterm` file with sessions, buttons and/or preferences.
-  Passwords are **not included**, or go **encrypted with a password** you choose.
+  Passwords and the key editor are **not included**, or go **encrypted with a password** you choose.
 - **Import configuration:** opens a `.netterm` file. If it has encrypted passwords, enter the file password.
   What you already have is not duplicated. Imported preferences replace yours (only if you mark it).
 
@@ -277,7 +277,13 @@ Nothing is ever installed without your approval.
 
 - Sessions, passwords and buttons are saved **encrypted** in `%USERPROFILE%\.netterm`, protected with your
   Windows user: another account or another PC cannot read them.
-- Preferences are in `%USERPROFILE%\.netterm\settings.json`.
+- Preferences are in `%USERPROFILE%\.netterm\settings.json`. Key editor texts are encrypted.
+- **SSH and SFTP check the device:** its key is saved the first time (`known_hosts`, same folder). If it changes later,
+  NetTerm stops **without sending the password** and shows both fingerprints. If you know why it changed (device replaced
+  or reinstalled), type `accept` and press `Enter`. If you don't, report it before accepting.
+- **Telnet and FTP are not encrypted:** the password and what you type travel in clear text. Use SSH or SFTP whenever you can.
+- **Logs are not encrypted.** Keep them in a safe folder.
+- **Only import `.netterm` files from people you trust:** their buttons and keys send commands to your devices.
 - NetTerm does not send your data to any server. It only connects to your devices and, to check for updates,
   to GitHub.
 
@@ -288,6 +294,7 @@ Nothing is ever installed without your approval.
 | "Windows protected your PC" | More info → Run anyway |
 | "Incorrect user or password" | Type the password in the terminal and save it if it works. Check the keyboard layout used when creating the password on the device (`@` versus `2`) |
 | "The server closed the connection" | Temporary block due to failed attempts: wait a few minutes |
+| "The SSH key has changed" | The password was not sent. If the device was replaced or reinstalled, type `accept` and press `Enter`. If not, don't accept and report it |
 | "Connection refused" | The port is not open or the service (SSH/Telnet) is not active on the device |
 | "Timed out" | The device is not responding: check the IP, the VPN or the firewall |
 | I can't see the sessions panel | Click `☰` or press `Ctrl+B` |
