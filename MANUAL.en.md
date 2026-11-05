@@ -123,6 +123,10 @@ If you prefer typing, the console is still there. Type `help` to see the command
 
 Click **＋ Button** in the buttons bar.
 
+Tip: a command can use **what you have selected**. Write `{sel}` in it (`show interfaces {sel} terse`) or press **Insert {sel}**.
+Double-click an interface in the terminal, press the button and it is sent with that interface. It works with a single line;
+with nothing selected, NetTerm warns you and sends nothing. It also works in the key editor and with multi-send.
+
 - **Commands:** one or several lines; they are sent in order with the delay you choose (useful for
   `terminal length 0` + `show running-config`).
 - **Password:** sends a saved password (for example the `enable` one) without it ever showing on screen.

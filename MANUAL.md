@@ -125,6 +125,9 @@ Pulsa **＋ Botón** en la barra de botones.
 
 - **Comandos:** una o varias líneas; se envían en orden con el retardo que elijas (útil para
   `terminal length 0` + `show running-config`).
+- **Lo que tengas sombreado:** escribe `{sel}` en un comando (`show interfaces {sel} terse`) o pulsa **Insertar {sel}**.
+  Haz doble clic en una interfaz de la terminal, pulsa el botón y se enviará con esa interfaz. Funciona con una sola línea;
+  sin nada sombreado, NetTerm avisa y no envía nada. También sirve en el editor de teclas y con multienvío.
 - **Contraseña:** envía una contraseña guardada (por ejemplo la de `enable`) sin que se vea nunca en pantalla.
 - **Pulsar Enter al final:** márcalo para que se ejecute directamente.
 - **Atajo de teclado:** haz clic en el campo «Atajo» y pulsa la combinación (`Ctrl+Alt+1`, `F5`, `Ctrl+→`…).
